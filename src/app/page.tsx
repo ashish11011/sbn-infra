@@ -1,14 +1,12 @@
 'use client';
 import Footer from '@/components/footer';
 import NavBar from '@/components/navBar';
-import { Button } from '@/components/ui/button';
 import {
   ArrowRight,
   ArrowUpRight,
-  Car,
   Construction,
   HardHat,
-  MoveUpRight,
+  LucideIcon,
   PencilRuler,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -87,14 +85,23 @@ function Projects() {
   );
 }
 
-function ProjectCard({ data }: any) {
+function ProjectCard({
+  data,
+}: {
+  data: {
+    name: string;
+    description: string;
+    details: string[];
+    image: string;
+  };
+}) {
   return (
     <div className=" border w-full h-full border-t-0 rounded-xl border-gray-200 shadow-md">
       <div className=" relative w-full h-72">
         <Image
           fill
           className="object-cover rounded-t-xl"
-          src={`/${data.image}`}
+          src={`${data.image}`}
           alt=""
         />
       </div>
@@ -134,14 +141,33 @@ function Services() {
 function ServicesCards() {
   return (
     <div className=" flex flex-col md:flex-row gap-5">
-      {servicesData.map((element: any, index) => {
-        return <ServiceCard key={index} serviceData={element} />;
-      })}
+      {servicesData.map(
+        (
+          element: {
+            icon: LucideIcon;
+            title: string;
+            description: string;
+            services: string[];
+          },
+          index: number
+        ) => {
+          return <ServiceCard key={index} serviceData={element} />;
+        }
+      )}
     </div>
   );
 }
 
-function ServiceCard({ serviceData }: any) {
+function ServiceCard({
+  serviceData,
+}: {
+  serviceData: {
+    icon: LucideIcon;
+    title: string;
+    description: string;
+    services: string[];
+  };
+}) {
   return (
     <div className=" flex flex-col gap-2 w-full px-6 py-6 border rounded-xl shadow-md">
       <div className=" border-2 rounded-lg w-fit p-2 border-gray-200">
@@ -152,7 +178,7 @@ function ServiceCard({ serviceData }: any) {
 
       <ul className=" mt-4 list-disc pl-4">
         {serviceData.services &&
-          serviceData.services.map((element: any, index: number) => {
+          serviceData.services.map((element: string, index: number) => {
             return (
               <li className=" text-gray-900" key={index}>
                 {element}

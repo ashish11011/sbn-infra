@@ -1,5 +1,4 @@
 import Footer from '@/components/footer';
-import NavBar from '@/components/navBar';
 import Link from 'next/link';
 import React from 'react';
 
