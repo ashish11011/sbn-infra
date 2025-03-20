@@ -1,0 +1,13 @@
+import AdminNavBar from '@/components/admin/adminNavBar'
+import React from 'react'
+
+const Layout = ({ children }: any) => {
+  return (
+    <div>
+      <AdminNavBar />
+      {children}
+    </div>
+  )
+}
+
+export default Layout

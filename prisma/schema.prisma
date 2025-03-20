@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Career{
+  id Int @default(autoincrement()) @id
+  title String
+  year_of_experience Int?
+  job_description String
+  responsibility String
+  industry String
+  date_posted DateTime @default(now())
+  // todos Todos[]
+}
+
+
+model projects{
+  id Int @default(autoincrement()) @id
+  title String
+  description String
+  architect String?
+  location String
+  images String[]
+}
+
+model contact{
+  id Int @default(autoincrement()) @id
+  name String
+  email String
+  message String
+  phone_number String
+  organization String
+}
+
+
+// Relationship
+
+// model Todos{
+//   id Int @unique @default(autoincrement())
+//   user_id Int
+//   career Career @relation(fields: [user_id], references: [id])
+// }
+
+
+
+// npx prisma migrate dev
+// npx prisma generate
