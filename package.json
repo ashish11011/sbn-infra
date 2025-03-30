@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -28,6 +29,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.10",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
