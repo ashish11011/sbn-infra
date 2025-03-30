@@ -1,88 +1,127 @@
 'use client';
+import { useRef, useState } from 'react';
 
-import Image from 'next/image';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import NavBar from '@/components/navBar';
-import Footer from '@/components/footer';
+import emailjs from '@emailjs/browser';
+import { Loader } from 'lucide-react';
+
+export const runtime = 'edge';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const fullNameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const [submitMessage, setSubmitMessage] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(false);
+  const handleSubmit = () => {
+    setIsLoading(true);
+    const fullName = fullNameRef.current?.value;
+    const email = emailRef.current?.value;
+    const phone = phoneRef.current?.value;
+    const message = messageRef.current?.value;
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const data = {
+      fullName,
+      email,
+      phone,
+      message,
+      time: new Date().toLocaleString(),
+    };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
+    emailjs.init({
+      publicKey: 'cS-Oqhga_0BhxIC_K',
+    });
+
+    emailjs.send('service_jyqol9s', 'template_gvsej1m', data).then(
+      (response) => {
+        setSubmitMessage('Form submitted successfully');
+        console.log('SUCCESS!', response.status, response.text);
+      },
+      (error) => {
+        setSubmitMessage('Form submission failed');
+        console.log('FAILED...', error);
+      }
+    );
+
+    fullNameRef.current!.value = '';
+    emailRef.current!.value = '';
+    phoneRef.current!.value = '';
+    messageRef.current!.value = '';
+
+    setIsLoading(false);
   };
 
   return (
-    <div className="">
-      <NavBar />
-      <div className=" min-h-[36rem] mt-12 w-full max-w-7xl flex flex-col md:flex-row gap-20  ">
-        <div className=" w-full h-full relative ">
-          <Image src="/contact-us.jpg" alt="about" fill />
+    <div className=" max-w-7xl mx-auto mt-32  w-full px-2">
+      <div className=" border rounded-3xl p-4 md:p-6  flex flex-col md:flex-row gap-12">
+        <div className=" w-full max-w-xl">
+          <img
+            src="/contact-us.jpg"
+            className=" rounded-xl w-full h-full object-cover"
+            alt=""
+          />
         </div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full md:w-1/2 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg"
-        >
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-            Contact Us
-          </h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <motion.input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              required
-              whileFocus={{ scale: 1.05 }}
-            />
-            <motion.input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              required
-              whileFocus={{ scale: 1.05 }}
-            />
-            <motion.textarea
-              name="message"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={4}
-              className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              required
-              whileFocus={{ scale: 1.05 }}
-            ></motion.textarea>
-            <motion.button
-              type="submit"
-              className="w-full p-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-md transition"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Send Message
-            </motion.button>
-          </form>
-        </motion.div>
+        <div className="w-full space-y-4 pb-4 md:pb-0 md:space-y-6">
+          <p className=" text-4xl font-medium">Lets&apos;s talk</p>
+          <p className=" text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores,
+            rem!
+          </p>
+          <div className=" space-y-4">
+            <div className=" space-y-1.5 w-full">
+              <p>Full Name</p>
+              <input
+                ref={fullNameRef}
+                type="text"
+                className=" py-2 px-3 rounded w-full border"
+              />
+            </div>
+            <div className=" flex flex-col md:flex-row gap-4">
+              <div className=" space-y-1.5 w-full">
+                <p>Email</p>
+                <input
+                  ref={emailRef}
+                  type="text"
+                  className=" py-2 px-3 rounded w-full border"
+                />
+              </div>
+              <div className=" space-y-1.5 w-full">
+                <p>Contact</p>
+                <input
+                  ref={phoneRef}
+                  type="text"
+                  className=" py-2 px-3 rounded w-full border"
+                />
+              </div>
+            </div>
+            <div className=" space-y-1.5">
+              <p>Message</p>
+              <textarea
+                ref={messageRef}
+                rows={4}
+                className=" py-2 px-3 rounded w-full border"
+              />
+            </div>{' '}
+          </div>
+          {submitMessage === 'Form submitted successfully' ? (
+            <p className=" text-green-600">{submitMessage}</p>
+          ) : (
+            <p className=" text-red-600">{submitMessage}</p>
+          )}
+          <div
+            onClick={handleSubmit}
+            className=" w-full min-w-32 text-center sm:w-fit px-4 py-2.5 md:py-2 rounded-lg bg-primary-blue text-white cursor-pointer  hover:bg-primary-blue/90 duration-200"
+          >
+            {isLoading ? (
+              <div className=" w-fit m-auto">
+                <Loader className=" duration-1000 animate-spin" />
+              </div>
+            ) : (
+              <p className=" mx-auto">Send Message</p>
+            )}
+          </div>
+        </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,15 +1,16 @@
-import Footer from '@/components/footer';
 import Link from 'next/link';
 import React from 'react';
 
+export const runtime = 'edge';
+
 const Page = () => {
   return (
-    <div>
+    <div className=" mt-6 md:mt-10">
       {/* <NavBar /> */}
       <HeroSection />
       <SecondSection />
       <OurValue />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
@@ -24,7 +25,7 @@ function HeroSection() {
         <p className=" text-3xl md:text-5xl font-semibold text-center">
           About The Company
         </p>
-        <p className=" text-sm md:text-base text-center">
+        <p className=" text-sm md:text-lg text-gray-700 text-center">
           SBN INFRA is a leading construction company in India, delivering
           large-scale industrial, commercial, and urban projects with
           excellence. With 20+ years of experience, we are trusted for our
@@ -77,8 +78,10 @@ function SecondSection() {
                 <p className=" text-3xl md:text-5xl font-semibold">
                   {dataNumber}
                 </p>
-                <p className=" text-2xl mt-3 md:mt-4 font-semibold">{title}</p>
-                <p>{subTitle}</p>
+                <p className=" text-lg md:text-2xl mt-2 md:mt-4 font-semibold">
+                  {title}
+                </p>
+                <p className=" text-sm md:text-base">{subTitle}</p>
               </div>
             );
           })}
@@ -102,12 +105,12 @@ function OurValue() {
           </p>
         </div>
         <Link href={'/contact-us'} className=" w-fit md:self-end md:ml-auto">
-          <p className=" rounded-3xl px-6 py-3 text-xl cursor-pointer hover:bg-primary-blue/90 duration-200 text-white bg-primary-blue font-semibold">
+          <p className=" rounded-3xl px-6 py-3 md:text-xl cursor-pointer hover:bg-primary-blue/90 duration-200 text-white bg-primary-blue font-semibold">
             Contact Us
           </p>
         </Link>
       </div>
-      <div className=" bg-gray-100 w-full flex flex-col md:flex-row md:gap-12 rounded-3xl p-6">
+      <div className=" bg-gray-100 w-full flex flex-col md:flex-row md:gap-12 rounded-3xl p-4 md:p-6">
         <img
           src="/aboutus-value.jpg"
           className=" w-full md:w-[50%] h-auto rounded-xl"
@@ -115,7 +118,7 @@ function OurValue() {
         />
         <div className=" w-full pt-8 md:py-12 flex flex-col gap-4 justify-between">
           <p className=" font-semibold text-3xl">Our Values</p>
-          <p className=" text-xl text-primary-blue/90">
+          <p className=" md:text-xl text-gray-600">
             Our values define who we are and guide every project we undertake.
             Committed to quality, integrity, innovation, and sustainability, we
             strive to exceed client expectations while building trust and
@@ -131,7 +134,7 @@ function OurValue() {
               return (
                 <div
                   key={index}
-                  className=" px-4 py-3 text-center font-semibold bg-white border-2 rounded-xl "
+                  className=" px-2 text-sm flex items-center justify-center md:px-4 py-3 text-center font-semibold bg-white border-2 rounded-xl "
                 >
                   <p>{element}</p>
                 </div>
@@ -140,7 +143,7 @@ function OurValue() {
           </div>
         </div>
       </div>
-      <div className=" bg-gray-100 w-full flex flex-col md:flex-row md:gap-12 rounded-3xl p-6">
+      <div className=" bg-gray-100 w-full flex flex-col md:flex-row md:gap-12 rounded-3xl p-4 md:p-6">
         <img
           src="/about-vision.jpg"
           className=" w-full md:w-[50%] h-auto rounded-xl"
@@ -148,7 +151,7 @@ function OurValue() {
         />
         <div className=" w-full pt-8 md:py-12 flex flex-col gap-4 justify-between">
           <p className=" font-semibold text-3xl">Our Mission</p>
-          <p className=" text-xl text-primary-blue/90">
+          <p className=" md:text-xl text-gray-600">
             Our mission is to build high-quality, innovative, and sustainable
             infrastructure that exceeds client expectations. We are committed to
             delivering excellence through craftsmanship, prioritizing customer
@@ -164,7 +167,7 @@ function OurValue() {
               return (
                 <div
                   key={index}
-                  className=" px-4 py-3 text-center font-semibold bg-white border-2 rounded-xl "
+                  className=" px-2 text-sm flex items-center justify-center md:px-4 py-3 text-center font-semibold bg-white border-2 rounded-xl "
                 >
                   <p>{element}</p>
                 </div>

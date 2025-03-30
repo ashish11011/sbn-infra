@@ -58,7 +58,7 @@ export const projectsData = [
     status: 'InProgress',
   },
   {
-    image: '/ABMauri.jpeg',
+    image: '/Indospace.jpeg',
     name: 'Indospace Industrial Park, Badli',
     description:
       'Located in Haryana, benefiting from key markets in NCR and Delhi’s well-developed infrastructure. Civil construction of multiple warehouses, commercial buildings, roads, drains, pond, security rooms, RMU, substation, STP, RE Wall, cable trench, etc.',
@@ -80,7 +80,7 @@ export const projectsData = [
     status: 'Completed',
   },
   {
-    image: '/ABMauri.jpeg',
+    image: '/johnson-matthey.jpg',
     name: 'Johnson Matthey India Pvt. Ltd.',
     description:
       'A greenfield project for a UK-based conglomerate, located at Bawal, HR, under the chemical industry, being developed as a Catalysts for Automobiles Manufacturing Facility.',
@@ -90,4 +90,18 @@ export const projectsData = [
     ],
     status: 'Completed',
   },
+  {
+    image: '/wipro.jpeg',
+    name: 'Wipro Hydraulic Private Limited',
+    description:
+      'A construction project located in Mahindra World City, Jaipur, Rajasthan, covering various infrastructure works including excavation, RCC roads, buildings, and other facilities.',
+    details: [
+      'Total build-up area: 16 acres',
+      'Works include excavation, PCC, RCC roads, ETP tanks, security rooms, docks, aprons, boundary wall, drains, and parking.',
+      'Architect / PMC: CP Kukreja',
+    ],
+    status: 'Completed',
+  },
 ];
+
+// Add wipro logo to marquee
