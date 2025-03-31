@@ -377,6 +377,9 @@ function LogoMarquee() {
     './logo/logo5.png',
     './logo/logo6.webp',
     './logo/logo7.svg',
+    './logo/logo8.png',
+    './logo/logo9.jpeg',
+    './logo/logo10.jpeg',
   ];
   return (
     <div className=" w-full py-8 md:py-16">

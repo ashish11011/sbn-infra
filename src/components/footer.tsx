@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 
 import emailjs from '@emailjs/browser';
 import Link from 'next/link';
+import { InstagramIcon, LinkedinIcon } from 'lucide-react';
 const Footer = () => {
   const fullNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -63,11 +64,11 @@ const Footer = () => {
             <p>
               PHASE-1,H.S.I.I.D.C.I.M.T, BAWAL, REWARI, HARYANA 123501, INDIA.
             </p>
-            <Link href={'tel:+91-9319912243'} className=" mt-4">
-              Phone: +91-9319912243
+            <Link href={'tel:+91-01284-264500'} className=" mt-4">
+              Phone: +91-01284-264500
             </Link>
-            <Link href={'mailto:info@nacdacinfrastructure.com'}>
-              Email: info@nacdacinfrastructure.com
+            <Link href={'mailto:mailto:Info@sbninfra.in'}>
+              Email: mailto:Info@sbninfra.in
             </Link>
           </div>
           <div className="flex flex-col gap-2">
@@ -83,6 +84,22 @@ const Footer = () => {
                 </Link>
               );
             })}
+            <div className=" flex gap-4 items-center  mt-auto ">
+              <Link
+                href={'http://www.linkedin.com/in/sbn-infra-691a68349'}
+                className="hover:scale-125 duration-200 cursor-pointer"
+              >
+                <LinkedinIcon size={24} />
+              </Link>
+              <Link
+                href={
+                  'https://www.instagram.com/sbninfra?igsh=MW95bDNnNHhmcHk2MA%3D%3D&utm_source=qr'
+                }
+                className="hover:scale-125 duration-200 cursor-pointer"
+              >
+                <InstagramIcon size={24} />
+              </Link>
+            </div>
           </div>
           <div className=" ml-auto w-full md:max-w-96">
             <p className=" font-medium text-xl">Contact Us</p>

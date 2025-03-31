@@ -69,7 +69,7 @@ export const projectsData = [
     status: 'Completed',
   },
   {
-    image: '/ABMauri.jpeg',
+    image: '/saint-gobain.jpg',
     name: 'Saint-Gobain India Pvt Ltd',
     description:
       'Establishing a greenfield project located at Bhiwadi, Rajasthan, including the construction of RCC buildings, roads, drains, mill building, pipe racks, pump house, water tank, rock storage, scrap handling unit, parking, etc.',
