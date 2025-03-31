@@ -46,7 +46,7 @@ const Footer = () => {
   };
 
   return (
-    <div className=" mt-12 relative min-h-96 h-full w-full md:px-12">
+    <div className=" mt-12 pb-8 relative min-h-80 h-full w-full md:px-12">
       <img
         src="/footer.jpg"
         className=" absolute top-0 left-0 w-full h-full object-cover"
@@ -54,7 +54,7 @@ const Footer = () => {
       />
 
       {/* content of footer */}
-      <div className="relative z-[999] max-w-7xl mx-auto px-8 pt-16 pb-4 text-white flex h-full min-h-96 flex-col justify-between gap-6">
+      <div className="relative z-[999] max-w-7xl mx-auto px-8 pt-16 pb-4 text-white flex h-full min-h-80 flex-col justify-between gap-6">
         <div className=" flex gap-6 flex-col md:flex-row">
           <div className=" flex flex-col gap-1 w-full max-w-96 text-sm font-medium">
             <p className=" text-3xl font-semibold">
@@ -133,13 +133,13 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <div className=" mt-auto border-t text-white border-gray-500">
+        {/* <div className=" mt-auto border-t text-white border-gray-500">
           <p className=" mx-auto mt-3 text-xs md:text-sm text-center max-w-2xl">
             Lorem ipsum ur adipisicing elit. Ad facere impedit magni qui ex,
             consequatur aliquam hic at in voluptas. Excepturi mollitia sapiente
             asperiores similique quae?
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

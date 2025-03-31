@@ -288,14 +288,17 @@ function AboutUs2() {
           </p>
         </div>
         <p className=" text-gray-600 text-sm md:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, eos
-          soluta debitis nesciunt enim similique numquam aliquam delectus
-          voluptate odio , illum nulla molestiae perferendis illo ea ipsum!
+          SBN INFRA is a premier construction company in India, specializing in
+          large-scale industrial, commercial, and urban projects. With over 20
+          years of experience, we are known for our commitment to quality,
+          professionalism, and excellence.
         </p>
         <img src="./about-us-SMALL.jpg" className=" rounded-lg" alt="" />
         <p className="text-sm text-gray-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Modi, tempora?
+          Our core values—quality, integrity, innovation, and
+          sustainability—define who we are and guide every project we undertake.
+          We strive to exceed client expectations while building trust and
+          fostering collaboration.
         </p>
         <Link
           href="/about"

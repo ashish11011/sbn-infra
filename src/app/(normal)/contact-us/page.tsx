@@ -63,9 +63,9 @@ export default function ContactPage() {
         </div>
         <div className="w-full space-y-4 pb-4 md:pb-0 md:space-y-6">
           <p className=" text-4xl font-medium">Lets&apos;s talk</p>
-          <p className=" text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores,
-            rem!
+          <p className="text-gray-600">
+            Have a project in mind? Let’s discuss how we can bring your vision
+            to life.
           </p>
           <div className=" space-y-4">
             <div className=" space-y-1.5 w-full">
