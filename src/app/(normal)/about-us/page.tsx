@@ -43,7 +43,7 @@ function HeroSection() {
 
 const aboutUsData = [
   {
-    dataNumber: '13+',
+    dataNumber: '12+',
     title: ' Contracting Years',
     subTitle: 'Delivering excellence in construction with proven expertise.',
   },

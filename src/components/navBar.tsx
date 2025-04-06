@@ -23,7 +23,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className=" w-full bg-white md:shadow-md fixed top-0 left-0 z-50">
+    <nav className=" w-full bg-white md:shadow-md fixed top-0 left-0 z-[999]">
       <div className="flex items-center justify-between w-full py-4 md:py-6 px-6 md:px-10">
         {/* Logo */}
         <div className="relative h-8 w-auto min-w-36 md:min-w-44">
@@ -60,7 +60,7 @@ const NavBar = () => {
             // animate="visible"
             // exit="hidden"
             // transition={{ duration: 0.3 }}
-            className="md:hidden flex flex-col items-center gap-4 bg-white pt-4 pb-6"
+            className="md:hidden flex last:border-b last:border-gray-600-700 flex-col items-center gap-4 bg-white pt-4 pb-6"
           >
             {navElements.map((element, index) => (
               <motion.div

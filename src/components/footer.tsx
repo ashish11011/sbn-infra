@@ -54,7 +54,7 @@ const Footer = () => {
       />
 
       {/* content of footer */}
-      <div className="relative z-[999] max-w-7xl mx-auto px-8 pt-16 pb-4 text-white flex h-full min-h-80 flex-col justify-between gap-6">
+      <div className="relative z-[50] max-w-7xl mx-auto px-8 pt-16 pb-4 text-white flex h-full min-h-80 flex-col justify-between gap-6">
         <div className=" flex gap-6 flex-col md:flex-row">
           <div className=" flex flex-col gap-1 w-full max-w-96 text-sm font-medium">
             <p className=" text-3xl font-semibold">
@@ -67,8 +67,8 @@ const Footer = () => {
             <Link href={'tel:+91-01284-264500'} className=" mt-4">
               Phone: +91-01284-264500
             </Link>
-            <Link href={'mailto:mailto:Info@sbninfra.in'}>
-              Email: mailto:Info@sbninfra.in
+            <Link href={'mailto:info@sbninfra.in'}>
+              Email: info@sbninfra.in
             </Link>
           </div>
           <div className="flex flex-col gap-2">

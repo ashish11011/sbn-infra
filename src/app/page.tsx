@@ -311,7 +311,7 @@ function AboutUs2() {
           />
         </Link>
       </div>
-      <div className="w-full rounded-xl overflow-hidden">
+      <div className="w-full max-h-64 sm:max-h-none rounded-xl overflow-hidden">
         <img src="./about-us-BIG.jpg" alt="" />
       </div>
     </div>
@@ -337,7 +337,7 @@ function WhyChooseUs() {
     },
   ];
   return (
-    <div className=" w-full max-w-7xl mx-auto px-4 flex flex-col gap-12 py-16 md:flex-row">
+    <div className=" w-full max-w-7xl mx-auto px-4 flex flex-col gap-12 py-10 sm:py-16 md:flex-row">
       <div className=" w-full flex flex-col justify-between gap-6">
         <div className=" space-y-2">
           <p className=" text-gray-700">[ Why choose Us ]</p>
@@ -360,7 +360,7 @@ function WhyChooseUs() {
           );
         })}
       </div>
-      <div className="w-full  overflow-hidden">
+      <div className="w-full max-h-64 sm:max-h-none rounded-xl  overflow-hidden">
         <img
           src="./why-choose-us.jpg"
           className="rounded-xl h-full object-cover"
@@ -406,8 +406,8 @@ function LogoMarquee() {
 
 function ContactUs() {
   const stats = [
-    { label: 'Years of Experience', value: '10+' },
-    { label: 'Projects Completed', value: '500+' },
+    { label: 'Years of Experience', value: '12+' },
+    { label: 'Projects Completed', value: '45+' },
     { label: 'Clients Satisfaction Rate', value: '95%' },
   ];
 
@@ -416,7 +416,7 @@ function ContactUs() {
       <div className="  py-8 px-4 md:px-10 bg-neutral-700 flex flex-col lg:flex-row gap-12 rounded-xl">
         <div className=" w-full flex flex-col gap-8 md:gap-12 justify-between">
           <div className=" space-y-2">
-            <p className=" text-gray-100">[About Us]</p>
+            <p className=" text-gray-100">[Contact Us]</p>
             <p className=" text-3xl md:text-5xl text-white ">
               leading the way in exceptional construction
             </p>
