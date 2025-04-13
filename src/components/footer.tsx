@@ -64,10 +64,19 @@ const Footer = () => {
             <p>
               PHASE-1,H.S.I.I.D.C.I.M.T, BAWAL, REWARI, HARYANA 123501, INDIA.
             </p>
-            <Link href={'tel:+91-01284-264500'} className=" mt-4">
-              Phone: +91-01284-264500
-            </Link>
-            <Link href={'mailto:info@sbninfra.in'}>
+            <div className=" flex gap-2 mt-4">
+              <p>Phone :</p>
+              <div className=" flex flex-col gap-2">
+                <Link href={'tel:+91-01284-264500'} className="">
+                  +91-01284-264500
+                </Link>
+                <Link href={'tel:01284-23264412'} className="">
+                  01284-23264412
+                </Link>
+              </div>
+            </div>
+
+            <Link className=" mt-2" href={'mailto:info@sbninfra.in'}>
               Email: info@sbninfra.in
             </Link>
           </div>
